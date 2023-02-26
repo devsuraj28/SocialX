@@ -27,3 +27,7 @@ About Google Play Services :
 implementation 'com.google.android.gms:play-services-auth:20.4.1' -- Dependencies of Firebase Android SDKs on Google Play services
 
 Some Firebase Android SDKs depend on Google Play services, which means they will only run on devices and emulators with Google Play services installed. These Firebase SDKs communicate with the Google Play services background service on the device to provide a secure, up-to-date, and lightweight API to your app.
+
+
+https://user-images.githubusercontent.com/85149421/221395904-77e9d88f-fd93-42a7-b88b-ec09cafe0607.mp4  ---- Working Video of Application.
+
