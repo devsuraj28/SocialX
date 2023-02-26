@@ -19,7 +19,7 @@ class NewsAdapter :
     val context: Context
     var newsList: ArrayList<Articles>
 
-    constructor(context: Context , newsList: ArrayList<Articles>) : super() {
+    constructor(context: Context, newsList: ArrayList<Articles>) : super() {
         this.context = context
         this.newsList = newsList
     }
@@ -36,7 +36,12 @@ class NewsAdapter :
         holder.titleTxtView.text = newsList[position].title
         holder.descriptionTxtView.text = newsList[position].description
 
-        Glide.with(context).load(newsList[position].urlToImage).into(holder.newsImageView)
+        if (newsList[position].urlToImage == null) {
+            holder.newsImageView.setImageResource(R.drawable.no_image_icon)
+        } else {
+            Glide.with(context).load(newsList[position].urlToImage).into(holder.newsImageView)
+        }
+
     }
 
     override fun getItemCount(): Int {
@@ -51,8 +56,7 @@ class NewsAdapter :
         val newsImageView: ImageView = itemView.findViewById(R.id.news_image_view)
     }
 
-    fun filteredList(filteredList : ArrayList<Articles>)
-    {
+    fun filteredList(filteredList: ArrayList<Articles>) {
         newsList = filteredList
         notifyDataSetChanged()
     }
